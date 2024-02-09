@@ -1,9 +1,9 @@
-name: Deployment
-
+name: Release New Version
 on:
-  push:
+  release:
+    types: [published]
     branches:
-      - main
+      - 'main'
 
 jobs:
   deployment:
@@ -11,3 +11,4 @@ jobs:
     environment: data-prd
     steps:
       - name: deploy
+        run: echo "I've run"
